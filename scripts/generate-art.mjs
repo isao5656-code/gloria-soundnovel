@@ -109,19 +109,19 @@ ${reeds(830, 34, "#1a2129", 0.9)}
 </defs>
 <rect width="${W}" height="${H}" fill="url(#s)"/>
 <g fill="#2a2118" stroke="#3a2e21" stroke-width="3">
-  ${[0, 1, 2, 3, 4, 5, 6, 7].map((i) => `<rect x="${i * 200}" y="300" width="196" height="700"/>`).join("")}
+  ${[0, 1, 2, 3, 4, 5, 6, 7].map((i) => `<rect x="${i * 200}" y="170" width="196" height="830"/>`).join("")}
 </g>
-<rect x="0" y="0" width="${W}" height="300" fill="#161009"/>
+<rect x="0" y="0" width="${W}" height="170" fill="#161009"/>
 <g fill="#120d07" stroke="#453421" stroke-width="4">
-  <rect x="620" y="470" width="360" height="330"/>
-  <rect x="590" y="440" width="420" height="40"/>
+  <rect x="620" y="300" width="360" height="330"/>
+  <rect x="590" y="270" width="420" height="40"/>
 </g>
-<path d="M700 800 q100 -170 200 0 z" fill="#e8933a" opacity="0.85"/>
-<path d="M745 800 q55 -105 110 0 z" fill="#f7d488" opacity="0.9"/>
-${lamp(800, 740, 430, "g")}
+<path d="M700 630 q100 -170 200 0 z" fill="#e8933a" opacity="0.85"/>
+<path d="M745 630 q55 -105 110 0 z" fill="#f7d488" opacity="0.9"/>
+${lamp(800, 570, 300, "g")}
 <g fill="#1d1710" stroke="#3a2e21" stroke-width="3">
-  <rect x="180" y="380" width="200" height="290" rx="4"/>
-  <rect x="1220" y="380" width="200" height="290" rx="4"/>
+  <rect x="180" y="230" width="200" height="290" rx="4"/>
+  <rect x="1220" y="230" width="200" height="290" rx="4"/>
 </g>
 <g opacity="0.4" fill="#070502"><ellipse cx="800" cy="1010" rx="920" ry="200"/></g>
 `),
@@ -243,27 +243,27 @@ ${lamp(256, 505, 150, "g")}
   ${glow("g", "#9fc0da", 0.4)}
 </defs>
 <rect width="${W}" height="${H}" fill="url(#s)"/>
-<ellipse cx="880" cy="330" rx="300" ry="120" fill="#4a5a68" opacity="0.28"/>
-<path d="M0 560 q260 -34 520 -18 q340 20 1080 -26 v60 H0 z" fill="#1b232c"/>
-<rect x="0" y="590" width="${W}" height="410" fill="url(#w)"/>
+<ellipse cx="880" cy="220" rx="300" ry="120" fill="#4a5a68" opacity="0.28"/>
+<path d="M0 420 q260 -34 520 -18 q340 20 1080 -26 v60 H0 z" fill="#1b232c"/>
+<rect x="0" y="450" width="${W}" height="550" fill="url(#w)"/>
 <g stroke="#6b8296" stroke-width="3" opacity="0.3">
   ${[0, 1, 2, 3, 4, 5, 6, 7]
-    .map((i) => `<path d="M${100 + i * 200} ${660 + i * 40} q140 12 300 0"/>`)
+    .map((i) => `<path d="M${100 + i * 200} ${520 + i * 55} q140 12 300 0"/>`)
     .join("")}
 </g>
-${reeds(600, 40, "#202932", 0.9)}
-${reeds(650, 26, "#161d24", 0.95, 700, -60)}
-${reeds(650, 26, "#161d24", 0.95, 700, 980)}
+${reeds(460, 40, "#202932", 0.9)}
+${reeds(510, 26, "#161d24", 0.95, 700, -60)}
+${reeds(510, 26, "#161d24", 0.95, 700, 980)}
 <g fill="#241d16" stroke="#3a3025" stroke-width="4">
-  <rect x="600" y="640" width="420" height="26" rx="4"/>
-  <rect x="640" y="666" width="20" height="150"/>
-  <rect x="960" y="666" width="20" height="150"/>
-  <rect x="800" y="666" width="20" height="130"/>
+  <rect x="600" y="470" width="420" height="26" rx="4"/>
+  <rect x="640" y="496" width="20" height="210"/>
+  <rect x="960" y="496" width="20" height="210"/>
+  <rect x="800" y="496" width="20" height="180"/>
 </g>
 <g fill="#1d160f" stroke="#3a3025" stroke-width="4">
-  <path d="M1080 700 q120 -26 240 0 l-30 62 q-90 20 -180 0 z"/>
+  <path d="M1080 540 q120 -26 240 0 l-30 62 q-90 20 -180 0 z"/>
 </g>
-${lamp(880, 330, 330, "g")}
+${lamp(880, 220, 330, "g")}
 <g opacity="0.4" fill="#060a0e"><ellipse cx="800" cy="1010" rx="940" ry="210"/></g>
 `),
 

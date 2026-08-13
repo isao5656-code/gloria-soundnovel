@@ -84,10 +84,12 @@ export default function Page() {
     return () => clearTimeout(timer);
   }, [revealed, fullText, skip, state, screen]);
 
-  // 本文が伸びたら追従スクロールする。
+  // 本文が伸びたら追従スクロールする。上端で行が切れていたら印を付ける。
   useEffect(() => {
     const el = proseRef.current;
-    if (el) el.scrollTop = el.scrollHeight;
+    if (!el) return;
+    el.scrollTop = el.scrollHeight;
+    el.dataset.scrolled = el.scrollTop > 1 ? "true" : "false";
   }, [revealed]);
 
   // ── 場面ごとの音 ───────────────────────────

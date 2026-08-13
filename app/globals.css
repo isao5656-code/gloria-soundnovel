@@ -77,16 +77,40 @@ button {
   opacity: 1;
 }
 
-/* 場面カテゴリごとの焦点。スマホの縦画面での切れ方を場面ごとに調整する。 */
-.focus-college { --focus: center 40%; }
-.focus-manor   { --focus: center 55%; }
-.focus-hall    { --focus: center 46%; }
-.focus-study   { --focus: center 48%; }
-.focus-attic   { --focus: center 42%; }
-.focus-village { --focus: center 52%; }
-.focus-fen     { --focus: center 58%; }
-.focus-ship    { --focus: center 44%; }
-.focus-dawn    { --focus: center 50%; }
+/*
+ * 場面カテゴリごとの焦点。
+ *
+ * --focus  : 横長画面での焦点。cover が幅で切れるときに効く。
+ * --m-zoom : 縦長画面での拡大率。画面より高くして、余った分を上から捨てる。
+ * --m-anchor: 縦長画面での縦位置。100% で画像の下端を画面下端に合わせる。
+ *
+ * 背景は 1600x1000（縦横比 1.6）。画面の縦横比がこれより小さいと cover は
+ * 高さぴったりで収まり、画像の上端から下端までが全部見えてしまう。
+ * その結果、絵の上部にある空や天井の暗い帯が画面上部を占め、
+ * さらに縦方向の --focus がまったく効かなくなる。
+ * そこで縦長画面では cover をやめ、高さを --m-zoom まで拡大して下寄せし、
+ * 主題を画面の上へ引き上げる。切り捨てる割合は (zoom-100)/zoom。
+ */
+.focus-college { --focus: center 40%; --m-zoom: 122%; --m-anchor: 100%; }
+.focus-manor   { --focus: center 55%; --m-zoom: 120%; --m-anchor: 92%; }
+.focus-hall    { --focus: center 46%; --m-zoom: 120%; --m-anchor: 100%; }
+.focus-study   { --focus: center 48%; --m-zoom: 122%; --m-anchor: 96%; }
+.focus-attic   { --focus: center 42%; --m-zoom: 118%; --m-anchor: 86%; }
+.focus-village { --focus: center 52%; --m-zoom: 126%; --m-anchor: 96%; }
+.focus-fen     { --focus: center 58%; --m-zoom: 118%; --m-anchor: 100%; }
+.focus-ship    { --focus: center 44%; --m-zoom: 112%; --m-anchor: 82%; }
+.focus-dawn    { --focus: center 50%; --m-zoom: 116%; --m-anchor: 90%; }
+
+/*
+ * 縦長・正方形寄りの画面（縦横比が背景の 1.6 を下回る領域）では、
+ * cover ではなく高さ基準の拡大に切り替える。
+ */
+@media (max-aspect-ratio: 3/2) {
+  .scene-layer {
+    background-size: auto var(--m-zoom, 125%);
+    background-position: center var(--m-anchor, 100%);
+  }
+}
 
 /* 天候と暗幕。場所が判別できる明度は保つ。 */
 .atmosphere {
@@ -221,6 +245,26 @@ button {
   line-height: var(--text-lh);
   letter-spacing: 0.02em;
   scrollbar-width: thin;
+}
+
+/*
+ * 本文が溢れて末尾へ追従したとき、上端で行が水平に切れる。
+ * 切れた行をぼかして、続きが上にあることを示す。
+ * スクロール位置が先頭のうちは掛けない（一行目を薄くしないため）。
+ */
+.prose[data-scrolled="true"] {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    rgba(0, 0, 0, 0.35) 8px,
+    #000 30px
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    rgba(0, 0, 0, 0.35) 8px,
+    #000 30px
+  );
 }
 
 .prose p {
@@ -687,7 +731,8 @@ button {
   .textbox {
     padding: 14px 16px 16px;
     min-height: 32svh;
-    max-height: 48svh;
+    /* 一段落が入りきらず上端で行が切れることが多かったので、少し高くする。 */
+    max-height: 54svh;
   }
   .cast img {
     max-width: 52vw;
