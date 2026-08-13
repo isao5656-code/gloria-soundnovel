@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: lint / test / build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 依存関係のインストール
+        run: npm ci
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: テスト
+        run: npm test
+
+      - name: ビルド
+        run: npm run build
+
+      # 生成物（背景・人物シルエット・シナリオ資料）は正本から作り直せる。
+      # 生成スクリプトを直してコミットし忘れた場合を検出する。
+      - name: 生成物が最新か確認
+        run: |
+          npm run art
+          npm run docs:scenario
+          if ! git diff --exit-code -- public docs/scenario.md; then
+            echo "::error::生成物が古くなっています。'npm run art' と 'npm run docs:scenario' を実行して差分をコミットしてください。"
+            exit 1
+          fi

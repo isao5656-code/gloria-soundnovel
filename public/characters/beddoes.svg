@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 940" width="420" height="940" preserveAspectRatio="xMidYMid slice">
+
+<defs>
+  <linearGradient id="b" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#080c10" stop-opacity="0.98"/>
+    <stop offset="1" stop-color="#080c10" stop-opacity="0.82"/>
+  </linearGradient>
+  <linearGradient id="r" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#8fa6bb" stop-opacity="0.5"/>
+    <stop offset="0.18" stop-color="#8fa6bb" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<g fill="url(#b)">
+<ellipse cx="210" cy="176" rx="52" ry="58"/><path d="M150 210 q60 -34 120 0 l6 46 q-66 -30 -132 0 z"/><rect x="158" y="96" width="104" height="60" rx="10"/><rect x="140" y="146" width="140" height="14" rx="7"/>
+<path d="M210 236 q-96 26 -110 100 l-14 274 q-4 64 12 330 h224 q16 -266 12 -330 l-14 -274 q-14 -74 -110 -100 z"/>
+           <path d="M104 342 l-24 226 20 8 38 -220 z"/><path d="M316 342 l24 226 -20 8 -38 -220 z"/>
+           <path d="M210 300 l-42 480 h84 z" opacity="0.5"/>
+</g>
+<g fill="url(#r)" opacity="0.85">
+<ellipse cx="210" cy="176" rx="52" ry="58"/><path d="M150 210 q60 -34 120 0 l6 46 q-66 -30 -132 0 z"/><rect x="158" y="96" width="104" height="60" rx="10"/><rect x="140" y="146" width="140" height="14" rx="7"/>
+<path d="M210 236 q-96 26 -110 100 l-14 274 q-4 64 12 330 h224 q16 -266 12 -330 l-14 -274 q-14 -74 -110 -100 z"/>
+           <path d="M104 342 l-24 226 20 8 38 -220 z"/><path d="M316 342 l24 226 -20 8 -38 -220 z"/>
+           <path d="M210 300 l-42 480 h84 z" opacity="0.5"/>
+</g>
+
+
+</svg>
