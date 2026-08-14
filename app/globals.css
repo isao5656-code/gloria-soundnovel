@@ -80,35 +80,30 @@ button {
 /*
  * 場面カテゴリごとの焦点。
  *
- * --focus  : 横長画面での焦点。cover が幅で切れるときに効く。
+ * --focus  : 横長画面での焦点。cover が高さで切れるときに効く。
  * --m-zoom : 縦長画面での拡大率。画面より高くして、余った分を上から捨てる。
  * --m-anchor: 縦長画面での縦位置。100% で画像の下端を画面下端に合わせる。
  *
- * 背景は 1600x1000（縦横比 1.6）。画面の縦横比がこれより小さいと cover は
- * 高さぴったりで収まり、画像の上端から下端までが全部見えてしまう。
- * その結果、絵の上部にある空や天井の暗い帯が画面上部を占め、
- * さらに縦方向の --focus がまったく効かなくなる。
- * そこで縦長画面では cover をやめ、高さを --m-zoom まで拡大して下寄せし、
- * 主題を画面の上へ引き上げる。切り捨てる割合は (zoom-100)/zoom。
+ * 背景は 1200x1080（縦横比 1.11）。画面がこれより縦長だと cover は
+ * 高さぴったりで収まり、縦方向の --focus が効かなくなる。
+ * そこで縦長画面では高さ基準の拡大へ切り替え、主題を本文ウィンドウの
+ * 上へ引き上げる。切り捨てる割合は (zoom-100)/zoom。
  */
-.focus-college { --focus: center 40%; --m-zoom: 122%; --m-anchor: 100%; }
-.focus-manor   { --focus: center 55%; --m-zoom: 120%; --m-anchor: 92%; }
-.focus-hall    { --focus: center 46%; --m-zoom: 120%; --m-anchor: 100%; }
-.focus-study   { --focus: center 48%; --m-zoom: 122%; --m-anchor: 96%; }
-.focus-attic   { --focus: center 42%; --m-zoom: 118%; --m-anchor: 86%; }
-.focus-village { --focus: center 52%; --m-zoom: 126%; --m-anchor: 96%; }
-.focus-fen     { --focus: center 58%; --m-zoom: 118%; --m-anchor: 100%; }
-.focus-ship    { --focus: center 44%; --m-zoom: 112%; --m-anchor: 82%; }
-.focus-dawn    { --focus: center 50%; --m-zoom: 116%; --m-anchor: 90%; }
+.focus-college { --focus: center 44%; --m-zoom: 116%; --m-anchor: 84%; }
+.focus-manor   { --focus: center 46%; --m-zoom: 114%; --m-anchor: 76%; }
+.focus-hall    { --focus: center 44%; --m-zoom: 124%; --m-anchor: 88%; }
+.focus-study   { --focus: center 46%; --m-zoom: 116%; --m-anchor: 82%; }
+.focus-attic   { --focus: center 42%; --m-zoom: 114%; --m-anchor: 70%; }
+.focus-village { --focus: center 46%; --m-zoom: 116%; --m-anchor: 80%; }
+.focus-fen     { --focus: center 48%; --m-zoom: 116%; --m-anchor: 72%; }
+.focus-ship    { --focus: center 44%; --m-zoom: 114%; --m-anchor: 74%; }
+.focus-dawn    { --focus: center 52%; --m-zoom: 114%; --m-anchor: 86%; }
 
-/*
- * 縦長・正方形寄りの画面（縦横比が背景の 1.6 を下回る領域）では、
- * cover ではなく高さ基準の拡大に切り替える。
- */
-@media (max-aspect-ratio: 3/2) {
+/* 背景の縦横比 1.11 より縦長の画面では、cover ではなく高さ基準の拡大にする。 */
+@media (max-aspect-ratio: 10/9) {
   .scene-layer {
-    background-size: auto var(--m-zoom, 125%);
-    background-position: center var(--m-anchor, 100%);
+    background-size: auto var(--m-zoom, 115%);
+    background-position: center var(--m-anchor, 80%);
   }
 }
 

@@ -1,25 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 940" width="420" height="940" preserveAspectRatio="xMidYMid slice">
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 1000" width="460" height="1000">
 <defs>
-  <linearGradient id="b" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#0b1116" stop-opacity="0.98"/>
-    <stop offset="1" stop-color="#0b1116" stop-opacity="0.82"/>
+  <linearGradient id="b" x1="0.2" y1="0" x2="0.7" y2="1">
+    <stop offset="0" stop-color="#0c1218" stop-opacity="0.99"/>
+    <stop offset="1" stop-color="#0c1218" stop-opacity="0.86"/>
   </linearGradient>
   <linearGradient id="r" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#8fa6bb" stop-opacity="0.5"/>
-    <stop offset="0.18" stop-color="#8fa6bb" stop-opacity="0"/>
+    <stop offset="0" stop-color="#93aec4" stop-opacity="0.5"/>
+    <stop offset="0.13" stop-color="#93aec4" stop-opacity="0.160"/>
+    <stop offset="0.3" stop-color="#93aec4" stop-opacity="0"/>
   </linearGradient>
+  <clipPath id="c">
+<ellipse cx="230" cy="166" rx="55" ry="62"/>
+<path d="M206 218
+  C190 232 140 256 130 262
+  C124 502 116 740 112 1000
+  H348
+  C344 740 336 502 330 262
+  C320 256 270 232 254 218 z"/>
+<path d="M136 292
+  q-21 190 -6 372 l30 6
+  q-9 -190 16.5 -370 z"/>
+<path d="M324 292
+  q21 190 6 372 l-30 6
+  q9 -190 -16.5 -370 z"/><path d="M175 144 q55 -52 110 0 q-4 -52 -55 -52 q-51 0 -55 52 z"/></clipPath>
 </defs>
 <g fill="url(#b)">
-<ellipse cx="210" cy="158" rx="60" ry="66"/><path d="M150 140 q60 -54 120 0 q-6 -50 -60 -50 q-54 0 -60 50 z"/>
-<path d="M210 222 q-84 24 -100 96 l-16 290 q-4 62 12 332 h208 q16 -270 12 -332 l-16 -290 q-16 -72 -100 -96 z"/>
-           <path d="M112 330 l-26 236 20 8 40 -228 z"/><path d="M308 330 l26 236 -20 8 -40 -228 z"/>
-</g>
-<g fill="url(#r)" opacity="0.85">
-<ellipse cx="210" cy="158" rx="60" ry="66"/><path d="M150 140 q60 -54 120 0 q-6 -50 -60 -50 q-54 0 -60 50 z"/>
-<path d="M210 222 q-84 24 -100 96 l-16 290 q-4 62 12 332 h208 q16 -270 12 -332 l-16 -290 q-16 -72 -100 -96 z"/>
-           <path d="M112 330 l-26 236 20 8 40 -228 z"/><path d="M308 330 l26 236 -20 8 -40 -228 z"/>
-</g>
-
+<ellipse cx="230" cy="166" rx="55" ry="62"/>
+<path d="M206 218
+  C190 232 140 256 130 262
+  C124 502 116 740 112 1000
+  H348
+  C344 740 336 502 330 262
+  C320 256 270 232 254 218 z"/>
+<path d="M136 292
+  q-21 190 -6 372 l30 6
+  q-9 -190 16.5 -370 z"/>
+<path d="M324 292
+  q21 190 6 372 l-30 6
+  q9 -190 -16.5 -370 z"/><path d="M175 144 q55 -52 110 0 q-4 -52 -55 -52 q-51 0 -55 52 z"/></g>
+<g clip-path="url(#c)"><rect width="460" height="1000" fill="url(#r)"/></g>
 
 </svg>
